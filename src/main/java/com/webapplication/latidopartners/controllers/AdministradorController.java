@@ -75,7 +75,6 @@ public class AdministradorController {
 
         return isValidated.map(administrador -> new ResponseEntity<>(administrador, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.BAD_REQUEST));
-
     }
 
 }
