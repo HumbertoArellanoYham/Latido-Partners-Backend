@@ -5,6 +5,7 @@ import com.webapplication.latidopartners.repositories.PartnersRepository;
 import com.webapplication.latidopartners.services.interfaces.DataOperations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,24 +16,26 @@ public class PartnersService implements DataOperations<Partners> {
     @Autowired
     private PartnersRepository partnersRepository;
 
+    @Transactional(readOnly = true)
     @Override
     public List<Partners> findAll() {
-        return List.of();
+        return partnersRepository.findAll();
     }
 
+    @Transactional(readOnly = true)
     @Override
     public Optional<Partners> findById(Long id) {
-        return Optional.empty();
+        return partnersRepository.findById(id);
     }
 
     @Override
     public Partners save(Partners partners) {
-        return null;
+        return partnersRepository.save(partners);
     }
 
     @Override
     public void remove(Long id) {
-
+        partnersRepository.deleteById(id);
     }
 
     @Override
@@ -42,6 +45,18 @@ public class PartnersService implements DataOperations<Partners> {
 
     @Override
     public Optional<Partners> saveOptional(Partners partners) {
-        return Optional.empty();
+        return Optional.of(partnersRepository.save(partners));
+    }
+
+    @Transactional(readOnly = true)
+    public Optional<Partners> getByName(String nombre) {
+        return partnersRepository.findPartnerByName(nombre);
+    }
+
+    @Transactional
+    public Optional<Partners> removeByName(String nombre) {
+       partnersRepository.removeByName(nombre);
+
+       return partnersRepository.findPartnerByName(nombre);
     }
 }

@@ -1,21 +1,34 @@
-{
-  "idCuestionario": 1,
-  "nombre": "Encuesta de Satisfacción",
-  "activo": true,
-  "preguntasList": [
-    {
-      "idPregunta": 101,
-      "preguntaDescription": "¿Está satisfecho con el servicio?",
-      "cuestionario": {
-        "idCuestionario": 1
+[
+  {
+    "idCuestionario": 3,
+    "nombre": "Servicio al cliente",
+    "activo": true,
+    "preguntasList": [
+      {
+        "idPregunta": 3,
+        "preguntaDescription": "¿Ha realizado correctamente su trabajo?"
+      },
+      {
+        "idPregunta": 4,
+        "preguntaDescription": "Califique su experiencia del 1 al 10."
       }
-    },
-    {
-      "idPregunta": 102,
-      "preguntaDescription": "Califique su experiencia del 1 al 10.",
-      "cuestionario": {
-        "idCuestionario": 1
+    ],
+    "resultado": null
+  },
+  {
+    "idCuestionario": 4,
+    "nombre": "Promotoria",
+    "activo": true,
+    "preguntasList": [
+      {
+        "idPregunta": 5,
+        "preguntaDescription": "¿Ha realizado correctamente su trabajo?"
+      },
+      {
+        "idPregunta": 6,
+        "preguntaDescription": "Califique su experiencia del 1 al 10."
       }
-    }
-  ]
-}
+    ],
+    "resultado": null
+  }
+]
