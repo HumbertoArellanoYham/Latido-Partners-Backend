@@ -1,0 +1,21 @@
+{
+  "idCuestionario": 1,
+  "nombre": "Encuesta de Satisfacción",
+  "activo": true,
+  "preguntasList": [
+    {
+      "idPregunta": 101,
+      "preguntaDescription": "¿Está satisfecho con el servicio?",
+      "cuestionario": {
+        "idCuestionario": 1
+      }
+    },
+    {
+      "idPregunta": 102,
+      "preguntaDescription": "Califique su experiencia del 1 al 10.",
+      "cuestionario": {
+        "idCuestionario": 1
+      }
+    }
+  ]
+}

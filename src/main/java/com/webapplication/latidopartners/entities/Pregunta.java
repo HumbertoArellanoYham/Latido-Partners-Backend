@@ -1,5 +1,6 @@
 package com.webapplication.latidopartners.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ public class Pregunta {
     @Column(name = "pregunta_description", nullable = false)
     private String preguntaDescription;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_cuestionario", nullable = false)
     private Cuestionario cuestionario;

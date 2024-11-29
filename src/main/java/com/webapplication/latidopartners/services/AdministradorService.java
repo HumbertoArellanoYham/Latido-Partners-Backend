@@ -46,6 +46,11 @@ public class AdministradorService implements DataOperations<Administrador> {
         administradorRepository.delete(administrador);
     }
 
+    @Override
+    public Optional<Administrador> saveOptional(Administrador administrador) {
+        return Optional.empty();
+    }
+
     // Validar administrador login
     @Transactional(readOnly = true)
     public Optional<Administrador> validarLogin(String usuario, String clave) {

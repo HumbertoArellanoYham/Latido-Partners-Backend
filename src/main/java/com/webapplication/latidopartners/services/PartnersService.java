@@ -39,4 +39,9 @@ public class PartnersService implements DataOperations<Partners> {
     public void removeForEntity(Partners partners) {
 
     }
+
+    @Override
+    public Optional<Partners> saveOptional(Partners partners) {
+        return Optional.empty();
+    }
 }

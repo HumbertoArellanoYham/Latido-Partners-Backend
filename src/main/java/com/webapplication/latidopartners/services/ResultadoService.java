@@ -39,4 +39,9 @@ public class ResultadoService implements DataOperations<Resultado> {
     public void removeForEntity(Resultado resultado) {
 
     }
+
+    @Override
+    public Optional<Resultado> saveOptional(Resultado resultado) {
+        return Optional.empty();
+    }
 }

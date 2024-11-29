@@ -27,7 +27,7 @@ public class PreguntaService implements DataOperations<Pregunta> {
 
     @Override
     public Pregunta save(Pregunta pregunta) {
-        return null;
+        return preguntaRepository.save(pregunta);
     }
 
     @Override
@@ -38,5 +38,10 @@ public class PreguntaService implements DataOperations<Pregunta> {
     @Override
     public void removeForEntity(Pregunta pregunta) {
 
+    }
+
+    @Override
+    public Optional<Pregunta> saveOptional(Pregunta pregunta) {
+        return Optional.empty();
     }
 }
