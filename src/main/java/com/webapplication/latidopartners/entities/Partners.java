@@ -1,5 +1,6 @@
 package com.webapplication.latidopartners.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,6 +29,7 @@ public class Partners {
     @Column(nullable = false)
     private String turno;
 
+    @JsonBackReference
     @OneToOne(mappedBy = "partner")
     private Resultado resultado;
 }

@@ -5,10 +5,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface CuestionarioRepository extends JpaRepository<Cuestionario, Long> {
     @Query(value = "Select * from cuestionario c where c.nombre = ?1", nativeQuery = true)
     Optional<Cuestionario> searchCuestionarioByName(String nombre);
+
+    @Query(value = "select * from cuestionario c where c.activo = true", nativeQuery = true)
+    List<Cuestionario> obtenerCuestionarioActivos();
 }

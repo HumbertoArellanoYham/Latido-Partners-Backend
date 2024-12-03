@@ -30,6 +30,12 @@ public class CuestionarioController {
         return new ResponseEntity<>(cuestionarioService.findAll(), HttpStatus.OK);
     }
 
+
+    @GetMapping(path = "/cuestionarios-activos")
+    public ResponseEntity<List<Cuestionario>> cuestionariosActivos(){
+        return new ResponseEntity<>(cuestionarioService.obtenerSoloLosCuestionarioActivos(), HttpStatus.OK);
+    }
+
     @DeleteMapping("/remove/{id}")
     public ResponseEntity<?> removeCuestionarioById(@PathVariable(value = "id") Long id){
        cuestionarioService.remove(id);

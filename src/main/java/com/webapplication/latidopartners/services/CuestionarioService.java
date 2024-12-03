@@ -2,6 +2,7 @@ package com.webapplication.latidopartners.services;
 
 import com.webapplication.latidopartners.entities.Cuestionario;
 import com.webapplication.latidopartners.entities.Pregunta;
+import com.webapplication.latidopartners.entities.Resultado;
 import com.webapplication.latidopartners.repositories.CuestionarioRepository;
 import com.webapplication.latidopartners.services.interfaces.DataOperations;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,4 +65,9 @@ public class CuestionarioService implements DataOperations<Cuestionario> {
     public void removeForEntity(Cuestionario cuestionario) {
 
     }
+
+    public List<Cuestionario> obtenerSoloLosCuestionarioActivos(){
+        return cuestionarioRepository.obtenerCuestionarioActivos();
+    }
+
 }

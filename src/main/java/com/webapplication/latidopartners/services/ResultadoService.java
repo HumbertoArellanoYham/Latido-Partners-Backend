@@ -13,16 +13,22 @@ import java.util.Optional;
 public class ResultadoService implements DataOperations<Resultado> {
 
     @Autowired
+    private PartnersService partnersService;
+
+    @Autowired
+    private CuestionarioService cuestionarioService;
+
+    @Autowired
     private ResultadoRepository resultadoRepository;
 
     @Override
     public List<Resultado> findAll() {
-        return List.of();
+        return resultadoRepository.findAll();
     }
 
     @Override
     public Optional<Resultado> findById(Long id) {
-        return Optional.empty();
+        return resultadoRepository.findById(id);
     }
 
     @Override
@@ -42,6 +48,6 @@ public class ResultadoService implements DataOperations<Resultado> {
 
     @Override
     public Optional<Resultado> saveOptional(Resultado resultado) {
-        return Optional.empty();
+        return Optional.of(resultadoRepository.save(resultado));
     }
 }

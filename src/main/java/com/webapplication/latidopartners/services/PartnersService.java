@@ -28,19 +28,22 @@ public class PartnersService implements DataOperations<Partners> {
         return partnersRepository.findById(id);
     }
 
+    @Transactional
     @Override
     public Partners save(Partners partners) {
         return partnersRepository.save(partners);
     }
 
+    @Transactional
     @Override
     public void remove(Long id) {
         partnersRepository.deleteById(id);
     }
 
+    @Transactional
     @Override
     public void removeForEntity(Partners partners) {
-
+        partnersRepository.delete(partners);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.webapplication.latidopartners.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -34,6 +35,7 @@ public class Cuestionario {
             fetch = FetchType.LAZY, orphanRemoval = true)
     List<Pregunta> preguntasList;
 
+    @JsonBackReference
     @OneToOne(mappedBy = "cuestionario")
     private Resultado resultado;
 }

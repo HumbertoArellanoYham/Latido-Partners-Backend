@@ -1,5 +1,6 @@
 package com.webapplication.latidopartners.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,10 +19,12 @@ public class Resultado {
     @Column(name = "id_respuesta")
     private Long idRespuesta;
 
+    @JsonManagedReference
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_partners", referencedColumnName = "id_partners", nullable = false)
     private Partners partner;
 
+    @JsonManagedReference
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cuestionario_id", referencedColumnName = "id_cuestionario", nullable = false)
     private Cuestionario cuestionario;
